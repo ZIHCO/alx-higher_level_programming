@@ -5,4 +5,5 @@ def print_last_digit(number):
         cpynum = (-1) * number
         if cpynum < 0:
             cpynum = -cpynum
+    print("{:d}".format(cpynum % 10), end="")
     return cpynum % 10
