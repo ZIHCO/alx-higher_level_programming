@@ -19,10 +19,14 @@ int is_palindrome(listint_t **head)
 		while (list)
 		{
 			if ((list->n) != (list_reversed->n))
+			{
+				free_listint(list_reversed);
 				return (0);
+			}
 			list_reversed = list_reversed->next;
 			list = list->next;
 		}
+		free_listint(list_reversed);
 		return (1);
 	}
 	return (1);
