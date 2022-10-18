@@ -1,10 +1,10 @@
 #!/usr/bin/python3
+"""Square Class
+
+
+This class does nothing
+
+
+"""
 class Square:
-    """Square Class
-
-
-    This class does nothing
-
-
-    """
     pass
