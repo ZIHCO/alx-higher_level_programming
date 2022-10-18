@@ -6,5 +6,7 @@ This class does nothing
 
 
 """
+
+
 class Square:
-    pass
+    pass    # An empty block
