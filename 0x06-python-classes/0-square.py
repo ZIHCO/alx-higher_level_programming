@@ -9,4 +9,8 @@ This class does nothing
 
 
 class Square:
+    """Square Class
+    Does nothing
+    """
+
     pass    # An empty block
