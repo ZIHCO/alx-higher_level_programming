@@ -70,3 +70,8 @@ Case for infinity float:
 Case for output type:
 	>>> type(add_integer(4.6, 8))
 	<class 'int'>
+
+Case for None a:
+	>>> add_integer(None, 2)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
