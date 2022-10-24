@@ -8,6 +8,7 @@ This module has one function, add_integer(). For example,
 9
 """
 
+
 def add_integer(a, b=98):
     """add_integer
 
@@ -17,7 +18,7 @@ def add_integer(a, b=98):
         a and b are integer or float.
 
     Return:
-        the sum of a and b, where a and b can be 
+        the sum of a and b, where a and b can be
         integers or floatand integer.
     """
     if type(a) is not int and type(a) is not float:
