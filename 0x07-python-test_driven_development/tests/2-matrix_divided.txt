@@ -61,7 +61,29 @@ Case for infinity div:
 
 
 Case for NaN div:
+-----------------
 	>>> matrix = [[1, 2, 3], [4, 5, 6]]
 	>>> matrix_divided(matrix, NaN)
 	Traceback (most recent call last):
 	NameError: name 'NaN' is not defined
+
+Case for stringed div:
+-----------------
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, 'NaN')
+	Traceback (most recent call last):
+	TypeError: div must be a number
+
+Case for !even sized row:
+-----------------
+	>>> matrix = [[2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, 'NaN')
+	Traceback (most recent call last):
+	TypeError: Each row of the matrix must have the size
+
+Case for !entirely float/int:
+-----------------
+	>>> matrix = [[2, 3, "a"], [4, 5, 6]]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
