@@ -68,10 +68,24 @@ Case for infinity float:
 	OverflowError: cannot convert float infinity to integer
 
 Case for output type:
+---------------------
 	>>> type(add_integer(4.6, 8))
 	<class 'int'>
 
 Case for None a:
+----------------
 	>>> add_integer(None, 2)
 	Traceback (most recent call last):
 	TypeError: a must be an integer
+
+Case for missing 1 parameter:
+-----------------------------
+	>>> add_integer(1)
+	99
+
+Case for converting NaN to integer:
+----------------------------------
+	>>> add_integer(1, float('kill')) #doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	...
+	ValueError: could not convert string to float: ...
