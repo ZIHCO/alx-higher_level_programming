@@ -85,7 +85,7 @@ Case for missing 1 parameter:
 
 Case for converting NaN to integer:
 ----------------------------------
-	>>> add_integer(1, float('kill'))
+	>>> add_integer(1, float('kill')) #doctest: +ELLIPSIS
 	Traceback (most recent call last):
 	...
-	ValueError: cannot convert float NaN to integer
+	ValueError: ...
