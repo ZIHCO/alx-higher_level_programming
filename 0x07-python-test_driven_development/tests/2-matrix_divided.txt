@@ -1,0 +1,67 @@
+===========================
+The "2-matrix_divided" module
+===========================
+
+Import "matrix_divided" from "2-matrix_divided" module:
+-------------------------------------------------
+	>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+Checking for module docstring:
+------------------------------
+	>>> m = __import__("2-matrix_divided").__doc__
+	>>> len(m) > 1
+	True
+
+Checking for function docstring:
+--------------------------------
+	>>> n = __import__("2-matrix_divided").matrix_divided.__doc__
+	>>> len(n) > 1
+	True
+
+Cases between two integers:
+---------------------------
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, 3)
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, 0)
+	Traceback (most recent call last):
+	ZeroDivisionError: division by zero
+ 
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, 1)
+	[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+Case for missing 1 parameter:
+------------------------------ 
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix)
+	Traceback (most recent call last):
+	TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Case for missing 2 parameter:
+-----------------------------
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided()
+	Traceback (most recent call last):
+	TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+Case for very long div:
+-----------------------
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, 1000000000000000000000000000)
+	[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+Case for infinity div:
+----------------------
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, 1e4000)
+	[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+
+Case for NaN div:
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, NaN)
+	Traceback (most recent call last):
+	NameError: name 'NaN' is not defined
