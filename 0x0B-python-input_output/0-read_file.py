@@ -4,6 +4,7 @@ This is the "0-read-file" module.
 It contains the "read_file" function.
 """
 
+
 def read_file(filename=""):
     """
     read_file:
