@@ -15,6 +15,13 @@ if __name__ == "__main__":
     obj_list = []
     for i in range(1, len(sys.argv)):
         obj_list.append(sys.argv[i])
-    with open("add_item.json", 'w', encoding="utf-8") as f:
-        save_to(obj_list, "add_item.json")
-        load_from("add_item.json")
+    with open("add_item.json", 'r+', encoding="utf-8") as f:
+        if not f.read():
+            save_to(obj_list, "add_item.json")
+        elif not load_from("add_item.json"):
+            save_to(obj_list, "add_item.json")
+        else:
+            get_str = load_from("add_item.json")
+            for i in obj_list:
+                get_str.append(i)
+            save_to(get_str, "add_item.json")
