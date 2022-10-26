@@ -5,6 +5,7 @@ modules
 """
 
 import sys
+import os
 save_to = __import__('5-save_to_json_file').save_to_json_file
 load_from = __import__('6-load_from_json_file').load_from_json_file
 
@@ -12,16 +13,12 @@ if __name__ == "__main__":
     """
     This script adds all commandline argument to a LIST
     """
-    obj_list = []
+    if os.path.exists('add_item.json'):
+        obj_list = load_from("add_item.json")
+    else:
+        obj_list = []
+
     for i in range(1, len(sys.argv)):
         obj_list.append(sys.argv[i])
-    with open("add_item.json", 'r+', encoding="utf-8") as f:
-        if not f.read():
-            save_to(obj_list, "add_item.json")
-        elif not load_from("add_item.json"):
-            save_to(obj_list, "add_item.json")
-        else:
-            get_str = load_from("add_item.json")
-            for i in obj_list:
-                get_str.append(i)
-            save_to(get_str, "add_item.json")
+
+    save_to(obj_list, "add_item.json")
