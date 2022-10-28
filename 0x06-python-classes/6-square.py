@@ -78,7 +78,7 @@ class Square:
     def my_print(self):
         if self.__size:
             for i in range(self.__size):
-                if i == 0:
+                if i == 0 and self.__position[1] > 0:
                     print()
                 if self.__position[0] > 0:
                     k = 0
