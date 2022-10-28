@@ -111,4 +111,4 @@ class Square:
             return ("\n" * self.__position[1] + (" " * self.__position[0] +
                     "#" * self.__size + "\n") * (self.__size - 1) +
                     " " * self.__position[0] + "#" * self.__size)
-        return "\n"
+        return ""
