@@ -91,7 +91,10 @@ class Square:
         if self.__size:
             for i in range(self.__size):
                 if i == 0 and self.__position[1] > 0:
-                    print()
+                    j = 0
+                    while j < self.__position[1]:
+                        print()
+                        j += 1
                 if self.__position[0] > 0:
                     k = 0
                     while k < self.__position[0]:
