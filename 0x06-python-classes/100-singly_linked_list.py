@@ -24,7 +24,8 @@ class Node:
         if type(data) is not int:
             raise TypeError("data must be an integer")
         self.__data = data
-        """if (type(next_node) is not None) and (type(next_node) is not type(self)):
+        """if (type(next_node) is not None) and (type(next_node)
+        is not type(self)):
             raise TypeError("next_node must be a Node object")"""
         self.__next_node = next_node
 
@@ -92,7 +93,7 @@ class SinglyLinkedList:
         else:
             self.__head = node
         return self.__head
-        
+
     def __str__(self):
         """printable list"""
         node = self.__head
