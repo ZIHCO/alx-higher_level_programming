@@ -55,19 +55,43 @@ class Square:
         return int(self.__size) * int(self.__size)
 
     def __eq__(self, other):
-        return 0
+        a = int(self.__size)**2
+        b = int(other.__size)**2
+        if a == b:
+            return True
+        return False
 
     def __lt__(self, other):
-        return 1
+        a = int(self.__size)**2
+        b = int(other.__size)**2
+        if a < b:
+            return True
+        return False
 
     def __le__(self, other):
-        return 1
+        a = int(self.__size)**2
+        b = int(other.__size)**2
+        if a <= b:
+            return True
+        return False
 
     def __ne__(self, other):
-        return 1
+        a = int(self.__size)**2
+        b = int(other.__size)**2
+        if a != b:
+            return True
+        return False
 
     def __gt__(self, other):
-        return 0
+        a = int(self.__size)**2
+        b = int(other.__size)**2
+        if a > b:
+            return True
+        return False
 
     def __ge__(self, other):
-        return 0
+        a = int(self.__size)**2
+        b = int(other.__size)**2
+        if a >= b:
+            return True
+        return False
