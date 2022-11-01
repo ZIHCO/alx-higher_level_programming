@@ -96,8 +96,10 @@ class SinglyLinkedList:
 
     def __str__(self):
         """printable list"""
-        node = self.__head
-        while node.next_node:
-            print(node.data)
-            node = node.next_node
-        return str(node.data)
+        if self.__head:
+            node = self.__head
+            while node.next_node:
+                print(node.data)
+                node = node.next_node
+            return str(node.data)
+        return ""
