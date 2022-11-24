@@ -6,7 +6,6 @@
 
 def is_same_class(obj, a_class):
     """Returns a bool if obj is an instance of a_class"""
-    if type(obj) is not None and type(a_class) is not None:
-        if isinstance(obj, a_class):
-            return True
-        return False
+    if type(obj) == a_class:
+        return True
+    return False
