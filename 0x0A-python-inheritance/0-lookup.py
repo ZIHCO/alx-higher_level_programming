@@ -17,9 +17,4 @@ def lookup(obj):
         list object
     """
 
-    obj_dict = obj.__dict__
-    obj_dict_keys = []
-    for key in obj_dict:
-        obj_dict_keys = obj_dict_keys + [key]
-
-    return obj_dict_keys
+    return dir(obj)
