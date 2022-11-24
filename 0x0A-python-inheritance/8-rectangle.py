@@ -1,9 +1,9 @@
 #!/usr/bin/python3
+Base_Geo = __import__('7-base_geometry').BaseGeometry
 """
 8-rectangle module contains the Rectangle class
 that inherits from BaseGeometry
 """
-Base_Geo = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(Base_Geo):
