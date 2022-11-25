@@ -16,8 +16,9 @@ def text_indentation(text):
             if text[i] in ['.', '?', ':']:
                 new_str += text[i]
                 new_str += '\n\n'
-                if (i + 1) < len(text) and text[i + 1] in [' ', '\s', '\t', '\n']:
-                    i += 1
+                if (i + 1) < len(text) and text[i + 1] in [' ', '\t', '\n']:
+                    while text[i + 1] in [' ', '\t', '\n']:
+                        i += 1
             else:
                 new_str += text[i]
             i += 1
