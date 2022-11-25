@@ -20,4 +20,4 @@ def text_indentation(text):
             else:
                 new_str += text[i]
             i += 1
-        print(new_str)
+        print(new_str, end='')

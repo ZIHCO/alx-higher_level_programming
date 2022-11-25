@@ -39,4 +39,3 @@ Case string parameter:
 	<BLANKLINE>
 	after live?
 	<BLANKLINE>
-	<BLANKLINE>
