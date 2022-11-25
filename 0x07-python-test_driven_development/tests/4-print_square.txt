@@ -1,0 +1,60 @@
+===========================
+The "4-print_square" module
+===========================
+
+Import "print_square" from "4-print_square" module:
+-------------------------------------------------
+	>>> print_square = __import__("4-print_square").print_square
+
+Checking for module docstring:
+------------------------------
+	>>> m = __import__("4-print_square").__doc__
+	>>> len(m) > 1
+	True
+
+Checking for function docstring:
+--------------------------------
+	>>> n = __import__("4-print_square").print_square.__doc__
+	>>> len(n) > 1
+	True
+
+Cases non negative int:
+---------------------------
+	>>> print_square(4)
+	####
+	####
+	####
+	####
+
+	>>> print_square(0)
+
+Cases float:
+--------------------------------
+	>>> print_square(3.0)
+	###
+	###
+	###
+
+	>>> print_square(9.4)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+	>>> print_square(-3.0)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+Case for NaN:
+-------------
+	>>> print_square(NaN)
+	Traceback (most recent call last):
+	NameError: name 'NaN' is not defined
+
+	>>> print_square("3")
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+Case for 0 parameter:
+---------------------
+	>>> print_square()
+	Traceback (most recent call last):
+	TypeError: print_square() missing 1 required positional argument: 'size'
