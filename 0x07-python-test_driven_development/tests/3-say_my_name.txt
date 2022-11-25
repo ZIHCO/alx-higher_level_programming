@@ -1,0 +1,45 @@
+=======================================================
+The "3-say_my_name" module
+=======================================================
+
+Import "say_my_name" function from "3-say_my_name"
+-------------------------------------------------------
+	>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+Checking for module docstring:
+------------------------------
+	>>> m = __import__("3-say_my_name").__doc__
+	>>> len(m) > 1
+	True
+
+Checking for function docstring:
+--------------------------------
+	>>> n = __import__("3-say_my_name").say_my_name.__doc__
+	>>> len(n) > 1
+	True
+
+Case missing first_name:
+------------------------
+	>>> say_my_name()
+	Traceback (most recent call last):
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+	>>> say_my_name(, "Smith") #doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	...
+	SyntaxError: ...
+
+Case missing last_name:
+-----------------------
+	>>> say_my_name("Smith")
+	My name is Smith 
+
+Case passing non string parameter:
+----------------------------------
+	>>> say_my_name("Smith", 12)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+	>>> say_my_name(102, "Smith")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
