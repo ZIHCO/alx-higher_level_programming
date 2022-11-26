@@ -8,5 +8,9 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_arg(self):
         """argument test"""
-        self.assertEqual(max_integer([2, 4, 5, 1]), 5)
+        self.assertEqual(max_integer([2, 4, 5, 6]), 6)
         self.assertEqual(max_integer(), None)
+        self.assertEqual(max_integer([1]), 1)
+        self.assertEqual(max_integer([-2, -3, -4]), -2)
+        self.assertEqual(max_integer([-2, 0, 4]), 4)
+        self.assertEqual(max_integer([2, -3, -4]), 2)
