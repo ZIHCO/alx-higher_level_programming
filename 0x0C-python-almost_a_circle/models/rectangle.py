@@ -5,6 +5,7 @@ inherits from the Base
 """
 from models.base import Base
 
+
 class Rectangle(Base):
     """
     Rectangle class - subclass of Base
@@ -17,7 +18,7 @@ class Rectangle(Base):
         __init__ - class constructor
     """
 
-    #class constructor
+    # class constructor
     def __init__(self, width, height, x=0, y=0, id=None):
         """private instance attributes initiator"""
         self.__width = width
