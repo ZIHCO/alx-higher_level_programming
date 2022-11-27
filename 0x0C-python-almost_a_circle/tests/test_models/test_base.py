@@ -8,6 +8,6 @@ class TestBase(unittest.TestCase):
 
     def test__id(self):
         """Test the __init__ method"""
-        self.assertEqual(Base(12).id, 12)
         self.assertEqual(Base().id, 1)
         self.assertEqual(Base().id, 2)
+        self.assertEqual(Base(12).id, 12)
