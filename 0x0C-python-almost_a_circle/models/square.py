@@ -14,3 +14,14 @@ class Square(Rectangle):
         """override the __str__"""
         return ("[Square] " + "(" + str(self.id) + ") " + str(self.x)
                 + "/" + str(self.y) + " - " + str(self.width))
+
+    @property
+    def size(self):
+        """get atrribute"""
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """set attribute"""
+        self.width = value
+        self.height = value
