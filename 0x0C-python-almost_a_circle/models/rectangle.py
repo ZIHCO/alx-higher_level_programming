@@ -90,3 +90,9 @@ class Rectangle(Base):
     def display(self):
         """print rectangle with char #"""
         print(((("#" * self.width) + "\n") * self.height), end="")
+
+    def __str__(self):
+        """override the __str__"""
+        return ("[Rectangle] " + "(" + str(self.id) + ") " + str(self.x)
+                + "/" + str(self.y) + " - " + str(self.width) + "/"
+                + str(self.height))
