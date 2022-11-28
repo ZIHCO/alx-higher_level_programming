@@ -98,10 +98,14 @@ class Rectangle(Base):
                 + "/" + str(self.y) + " - " + str(self.width) + "/"
                 + str(self.height))
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """assigns an argument to each attribute"""
-        arg_list = ["id", "width", "height", "x", "y"]
-        i = 0
-        while i < len(args):
-            setattr(self, arg_list[i], args[i])
-            i += 1
+        if args:
+            arg_list = ["id", "width", "height", "x", "y"]
+            i = 0
+            while i < len(args):
+                setattr(self, arg_list[i], args[i])
+                i += 1
+        elif kwargs is not None:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
