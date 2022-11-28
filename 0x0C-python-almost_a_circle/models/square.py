@@ -37,3 +37,13 @@ class Square(Rectangle):
         elif kwargs is not None:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """dict rep of square"""
+        square_dict = {}
+        i = 0
+        square_attri = ["id", "size", "x", "y"]
+        while i < len(square_attri):
+            square_dict[square_attri[i]] = getattr(self, square_attri[i])
+            i += 1
+        return square_dict
