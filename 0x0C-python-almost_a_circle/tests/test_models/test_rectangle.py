@@ -16,8 +16,8 @@ class TestRectangle(unittest.TestCase):
     def test__id(self):
         """Test the __init__ method"""
         self.assertEqual(self.r3.id, 23)
-        self.assertEqual(self.r1.id, 1)
-        self.assertEqual(self.r2.id, 2)
+        self.assertEqual(self.r1.id, 3)
+        self.assertEqual(self.r2.id, 4)
 
     def test_validator(self):
         """Test for the setter and getter validator"""
