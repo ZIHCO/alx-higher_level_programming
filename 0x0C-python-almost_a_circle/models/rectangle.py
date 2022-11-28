@@ -97,3 +97,11 @@ class Rectangle(Base):
         return ("[Rectangle] " + "(" + str(self.id) + ") " + str(self.x)
                 + "/" + str(self.y) + " - " + str(self.width) + "/"
                 + str(self.height))
+
+    def update(self, *args):
+        """assigns an argument to each attribute"""
+        arg_list = ["id", "width", "height", "x", "y"]
+        i = 0
+        while i < len(args):
+            setattr(self, arg_list[i], args[i])
+            i += 1
