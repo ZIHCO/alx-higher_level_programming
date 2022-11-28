@@ -13,6 +13,10 @@ class TestBase(unittest.TestCase):
         self.b2 = Base()
         self.b3 = Base(12)
 
+    def tearDown(self):
+        """tear down"""
+        pass
+
     def test__id(self):
         """Test the __init__ method"""
         self.assertEqual(self.b1.id, 1)
