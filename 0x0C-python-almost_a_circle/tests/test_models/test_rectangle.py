@@ -26,10 +26,10 @@ class TestRectangle(unittest.TestCase):
     def test_validator(self):
         """Test for the setter and getter validator"""
         with self.assertRaises(ValueError):
-            self.r1.width = -10
+            self.r6 = Rectangle(1, -10, 0, 0, 6)
         with self.assertRaises(TypeError):
-            self.r2.height = "10"
+            self.r4 = Rectangle(1, 1, 1, "10", 13)
         with self.assertRaises(TypeError):
-            self.r3.x = {}
+            self.r5 = Rectangle(1, 2, {}, 1, 5)
         with self.assertRaises(ValueError):
-            self.r3.y = -1
+            self.r = Rectangle(0, 2, 0, 3, 21)
