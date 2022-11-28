@@ -6,20 +6,25 @@ from models.rectangle import Rectangle
 class TestRectangle(unittest.TestCase):
     """Testcase for Rectangle class"""
 
+    def setUp(self):
+        """rectangle setup"""
+        self.r1 = Rectangle(2, 20)
+        self.r2 = Rectangle(3, 10)
+        self.r3 = Rectangle(12, 2, 0, 3, 23)
+
     def test__id(self):
         """Test the __init__ method"""
-        self.assertEqual(Rectangle(12, 2, 0, 3, 23).id, 23)
-        self.assertEqual(Rectangle(2, 20).id, 1)
-        self.assertEqual(Rectangle(3, 10).id, 2)
+        self.assertEqual(self.r3.id, 23)
+        self.assertEqual(self.r1.id, 3)
+        self.assertEqual(self.r2.id, 4)
 
     def test_validator(self):
         """Test for the setter and getter validator"""
-        r = Rectangle(10, 2)
         with self.assertRaises(ValueError):
-            r.width = -10
+            self.r1.width = -10
         with self.assertRaises(TypeError):
-            r.height = "10"
+            self.r2.height = "10"
         with self.assertRaises(TypeError):
-            r.x = {}
+            self.r3.x = {}
         with self.assertRaises(ValueError):
-            r.y = -1
+            self.r3.y = -1
