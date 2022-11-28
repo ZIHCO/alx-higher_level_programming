@@ -40,4 +40,4 @@ class TestRectangle(unittest.TestCase):
 
     def test_display(self):
         """test for display"""
-        self.assertEqual(Rectangle(1, 1).display(), print("#"))
+        self.assertEqual(Rectangle(1, 1).display(), None)
