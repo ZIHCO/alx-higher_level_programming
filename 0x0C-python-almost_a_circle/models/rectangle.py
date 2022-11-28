@@ -95,8 +95,8 @@ class Rectangle(Base):
     def __str__(self):
         """override the __str__"""
         return ("[Rectangle] " + "(" + str(self.id) + ") " + str(self.x)
-                + "/" + str(self.y) + " - " + str(self.width) + "/"
-                + str(self.height))
+                + "/" + str(self.y) + " - " + str(self.width)
+                + "/" + str(self.height))
 
     def update(self, *args, **kwargs):
         """assigns an argument to each attribute"""
@@ -109,3 +109,14 @@ class Rectangle(Base):
         elif kwargs is not None:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """dict rep for Rectangle"""
+        attri_list = ["id", "width", "height", "x", "y"]
+        i = 0
+        dict_rect = {}
+        while i < len(attri_list):
+            dict_rect[attri_list[i]] = getattr(self, attri_list[i])
+            i += 1
+
+        return dict_rect
