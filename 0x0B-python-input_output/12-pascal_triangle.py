@@ -10,6 +10,8 @@ def pascal_triangle(n):
     new_list = []
     if n > 0:
         m = 1
+        if n == 1:
+            new_list.append([1])
         if n > 1:
             while m <= n:
                 i = 0
