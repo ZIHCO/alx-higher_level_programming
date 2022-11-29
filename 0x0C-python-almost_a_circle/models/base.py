@@ -29,5 +29,5 @@ class Base:
     def to_json_string(list_dictionaries):
         """returns the JSON string repr"""
         if list_dictionaries:
-            return json.dumps(list_dictionaries, separators=(":", ","))
+            return json.dumps(list_dictionaries, separators=(':', ','))
         return "[]"
