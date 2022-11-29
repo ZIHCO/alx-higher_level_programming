@@ -28,7 +28,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """returns the JSON string repr"""
-        if list_dictionaries and len(list_dictionaries):
+        if list_dictionaries:
             return json.dumps(list_dictionaries)
         return "[]"
 
@@ -42,4 +42,4 @@ class Base:
         objs_json = cls.to_json_string(list_dict)
         filename = cls.__name__ + ".json"
         with open(filename, 'w', encoding="utf-8") as f:
-            return f.write(objs_json)
+            f.write(objs_json)
