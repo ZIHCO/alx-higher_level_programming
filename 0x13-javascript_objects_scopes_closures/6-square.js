@@ -10,7 +10,7 @@ module.exports = class Square extends SquareP {
    */
 
   constructor (size) {
-    super();
+    super(size);
     this.size = size;
   }
 
