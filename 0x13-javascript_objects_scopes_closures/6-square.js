@@ -19,7 +19,7 @@ module.exports = class Square extends SquareP {
       for (let i = 0; i < this.size; i++) {
         let str = '';
         for (let j = 0; j < this.size; j++) {
-          str = str + 'c';
+          str = str + c;
         }
         console.log(str);
       }
