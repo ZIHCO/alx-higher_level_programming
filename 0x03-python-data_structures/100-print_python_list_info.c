@@ -1,6 +1,5 @@
-#include "/usr/include/python3.8/Python.h"
-#include "/usr/include/python3.8/listobject.h"
-#include "/usr/include/python3.8/object.h"
+#include "/usr/include/python3.4/listobject.h"
+#include "/usr/include/python3.4/object.h"
 #include <stdio.h>
 
 /**
