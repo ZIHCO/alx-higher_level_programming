@@ -12,11 +12,8 @@
 
 void print_python_list_info(PyObject *p)
 {
-	Py_ssize_t length;
+	int length;
 
-	if (PyList_Type(p))
-	{
-		length = PyList_Size(p);
-		printf("[*] Size of the Python List = %u", length);
-	}
+	length = PyList_Size(p);
+	printf("[*] Size of the Python List = %d", length);
 }
