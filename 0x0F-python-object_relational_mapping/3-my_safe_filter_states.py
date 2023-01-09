@@ -25,7 +25,7 @@ if __name__ == "__main__":
                  ORDER
                     BY
                 states.id ASC
-                """, {'; TRUNCATE TABLE states ; SELECT * FROM states WHERE name = '"'name': state_name}i
+                """, {'name': state_name})
         rows = c.fetchall()
         for row in rows:
             print(row)
