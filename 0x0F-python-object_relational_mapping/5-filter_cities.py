@@ -38,5 +38,5 @@ if __name__ == '__main__':
             if i + 1 == len(rows):
                 print(row[0])
             else:
-                print(row[0] + ",", end='')
+                print(row[0] + ", ", end='')
             i += 1
