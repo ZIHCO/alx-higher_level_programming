@@ -4,21 +4,18 @@
  * compute factorial recursively
  */
 
-let factorial = 1;
-const n = process.argv[2];
+const n = parseInt(process.argv[2]);
 
-function getFactorial (n) {
-  if (!n || n <= 0) {
-    console.log(1);
-  } else {
-    if (n === 1) {
-      console.log(factorial);
-    } else {
-      factorial *= n;
-      n -= 1;
-      getFactorial(n);
-    }
-  }
+if (!n) {
+  console.log(1);
+} else {
+  console.log(getFactorial(n));
 }
 
-getFactorial(n);
+function getFactorial (n) {
+  if (n === 1 || n === 0) {
+    return (1);
+  } else {
+    return (n * getFactorial(n - 1));
+  }
+}
