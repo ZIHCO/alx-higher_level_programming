@@ -8,7 +8,7 @@ let factorial = 1;
 const n = process.argv[2];
 
 function getFactorial (n) {
-  if (!n) {
+  if (!n || n <= 0) {
     console.log(1);
   } else {
     if (n === 1) {
