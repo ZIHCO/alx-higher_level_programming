@@ -4,13 +4,10 @@
    using 'urllib'
 """
 
-from urllib.request import Request, urlopen
+import requests
 
 if __name__ == "__main__":
-    html = Request('https://alx-intranet.hbtn.io/status')
-    with urlopen(html) as response:
-        content = response.read()
-        utf8_content = content.decode('utf-8')
-        print('Body response:')
-        print('\t- type: {_type}'.format(_type=type(utf8_content)))
-        print('\t- content: {_content}'.format(_content=utf8_content))
+    r = requests.get('https://alx-intranet.hbtn.io/status')
+    print('Body response:')
+    print('\t- type: {}'.format(type(r.content.decode('utf-8'))))
+    print('\t- content: {}'.format(r.content.decode('utf-8')))
