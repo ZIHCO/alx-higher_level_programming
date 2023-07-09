@@ -6,7 +6,7 @@
 
 from urllib.request import Request, urlopen
 from urllib.parse import urlencode
-from urllib.error import URLError
+from urllib.error import HTTPError
 from sys import argv
 
 if __name__ == "__main__":
@@ -14,6 +14,5 @@ if __name__ == "__main__":
     try:
         with urlopen(req) as response:
             print(response.read().decode('utf-8'))
-    except URLError as e:
-        if hasattr(e, 'code'):
-            print('Error code: ', e.code)
+    except HTTPError as e:
+        print('Error code: ', e.code)
