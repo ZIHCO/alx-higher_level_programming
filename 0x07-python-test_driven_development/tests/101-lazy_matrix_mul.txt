@@ -1,0 +1,28 @@
+Doctest for lazy_matrix_mul
+===========================
+lazy_matrix_mul contains the definition, lazy_matrix_mul.
+
+>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+
+check if list of lists:
+-----------------------
+>>> lazy_matrix_mul([[]], [[3,4,5]])
+Traceback (most recent call last):
+	...
+ValueError: m_a can't be empty
+
+check if entry are number that are castable to int:
+---------------------------------------------------
+>>> lazy_matrix_mul([[float('nan',)], [9], [10]], [[3,4,5]])
+Traceback (most recent call last):
+	...
+ValueError: m_a contains NaN
+
+>>> lazy_matrix_mul([[-(float('inf',))], [9], [10]], [[3,4,5]])
+Traceback (most recent call last):
+	...
+ValueError: m_a contains infinity
+
+check that m_a and m_b are non-empty:
+-------------------------------------
