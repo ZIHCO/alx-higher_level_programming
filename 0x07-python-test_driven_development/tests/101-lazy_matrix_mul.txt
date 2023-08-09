@@ -26,3 +26,7 @@ ValueError: m_a contains infinity
 
 check that m_a and m_b are non-empty:
 -------------------------------------
+>>> lazy_matrix_mul([[float('1',)], [9], [10]], [[3,4,5]])
+array([[ 3.,  4.,  5.],
+       [27., 36., 45.],
+       [30., 40., 50.]])
