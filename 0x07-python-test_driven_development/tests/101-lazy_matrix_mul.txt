@@ -12,6 +12,11 @@ Traceback (most recent call last):
 	...
 ValueError: m_a can't be empty
 
+>>> lazy_matrix_mul([[3,4,5]], [[]])
+Traceback (most recent call last):
+	...
+ValueError: m_b can't be empty
+
 check if entry are number that are castable to int:
 ---------------------------------------------------
 >>> lazy_matrix_mul([[float('nan',)], [9], [10]], [[3,4,5]])
