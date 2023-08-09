@@ -37,6 +37,6 @@ def lazy_matrix_mul(m_a, m_b):
             if i in [float('inf'), -(float('inf'))]:
                 raise ValueError("m_b contains infinity")"""
 
-    if not (m_a and m_b):
+    if not (m_a and m_b) or (m_a != m_a and m_b != m_b):
         return None
     return numpy.dot(m_a, m_b)
