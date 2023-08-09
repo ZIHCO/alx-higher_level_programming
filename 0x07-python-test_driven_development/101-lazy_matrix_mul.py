@@ -6,7 +6,7 @@ def lazy_matrix_mul(m_a, m_b):
     """return dot product of m_a and m_b"""
     import numpy
     """returns the dot product of m_a and m_b"""
-    if not (m_a and m_b):
+    """if not (m_a and m_b):
         return None
     if type(m_a) is not list:
         raise TypeError("m_a must be a list")
@@ -35,6 +35,8 @@ def lazy_matrix_mul(m_a, m_b):
             if i != i:
                 raise ValueError("m_b contains NaN")
             if i in [float('inf'), -(float('inf'))]:
-                raise ValueError("m_b contains infinity")
+                raise ValueError("m_b contains infinity")"""
 
+    if not (m_a and m_b):
+        return None
     return numpy.dot(m_a, m_b)
