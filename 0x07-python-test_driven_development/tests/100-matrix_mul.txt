@@ -1,0 +1,49 @@
+This text file contains the module, 100-matrix_mul.
+===================================================
+This module contains the definition, matrix_mul. This definition
+returns the dot product of the matrices.
+
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+check if functional:
+------------------------------------------
+>>> m_a = [[1, 2, 3, 4], [5, 6, 7, 8], [0, 9, 8, 7]]
+>>> m_b = [[2, 3, 4], [4, 5, 6], [6, 7, 8], [0, 9, 8]]
+>>> matrix_mul(m_a, m_b)
+[[28, 70, 72], [76, 166, 176], [84, 164, 174]]
+
+check for special float numbers in matrix:
+------------------------------------------
+>>> m_a = [[1, 2, float('nan'), 4], [5, 6, 7, 8], [0, 9, 8, 7]]
+>>> m_b = [[2, 3, 4], [4, 5, 6], [6, 7, 8], [0, 9, 8]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+	...
+ValueError: m_a contains NaN
+
+>>> m_a = [[1, 2, 3, 4], [5, 6, 7, 8], [0, 9, 8, 7]]
+>>> m_b = [[2, 3, 4], [4, float('inf'), 6], [6, 7, 8], [0, 9, 8]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+	...
+ValueError: m_b contains infinity
+
+check for return type - if list of lists:
+-----------------------------------------
+>>> m_a = [[1, 2, 3, 4], [5, 6, 7, 8], [0, 9, 8, 7]]
+>>> m_b = [[2, 3, 4], [4, 5, 6], [6, 7, 8], [0, 9, 8]]
+>>> result = matrix_mul(m_a, m_b)
+>>> type(result)
+<class 'list'>
+>>> type(result) == type(result[0])
+True
+
+>>> type(matrix_mul([], []))
+<class 'NoneType'>
+
+check for required argument:
+----------------------------
+>>> matrix_mul()
+Traceback (most recent call last):
+	...
+TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
