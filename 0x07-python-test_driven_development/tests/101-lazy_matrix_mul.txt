@@ -40,3 +40,8 @@ check return type:
 Traceback (most recent call last):
 	...
 TypeError: m_a should contain only integers or floats
+
+>>> lazy_matrix_mul('school', [[3,4,5]])
+Traceback (most recent call last):
+	...
+TypeError: m_a must be a list
