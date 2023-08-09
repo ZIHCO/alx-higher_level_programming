@@ -35,3 +35,8 @@ check return type:
 ------------------
 >>> type(lazy_matrix_mul([[float('1',)], [9], [10]], [[3,4,5]]))
 <class 'numpy.ndarray'>
+
+>>> lazy_matrix_mul([[float('1',)], ['i'], [10]], [[3,4,5]])
+Traceback (most recent call last):
+	...
+TypeError: m_a should contain only integers or floats
