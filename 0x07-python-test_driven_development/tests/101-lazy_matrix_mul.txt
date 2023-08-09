@@ -50,3 +50,10 @@ ValueError: data type must provide an itemsize
 Traceback (most recent call last):
 	...
 numpy.core._exceptions._UFuncNoLoopError: ufunc 'multiply' did not contain a loop with signature matching types (dtype('<U6'), dtype('<U1')) -> None
+
+>>> ma = [[1, 2], [3, 4], [3, 4]]
+>>> mb = [[5, 6, 1], [7, 8, 2]]
+>>> lazy_matrix_mul(ma, mb)
+array([[19, 22,  5],
+       [43, 50, 11],
+       [43, 50, 11]])
