@@ -3,9 +3,10 @@
    matrix_mul.
 """
 
+
 def matrix_mul(m_a, m_b):
     """returns the dot product of two matrices"""
-    if  not (m_a and m_b):
+    if not (m_a and m_b):
         return None
     if type(m_a) is not list:
         raise TypeError("m_a must be a list")
@@ -30,7 +31,7 @@ def matrix_mul(m_a, m_b):
     for row in m_b:
         for i in row:
             if type(i) not in [int, float]:
-             raise TypeError("m_b should contain only integers or floats")
+                raise TypeError("m_b should contain only integers or floats")
             if i != i:
                 raise ValueError("m_b contains NaN")
             if i in [float('inf'), -(float('inf'))]:
@@ -47,7 +48,7 @@ def matrix_mul(m_a, m_b):
         raise ValueError("m_a and m_b can't be multiplied")
     result = []
     transposed_m_b = [[row[i] for row in m_b] for i in range(len(m_b[0]))]
-    
+
     for row in m_a:
         result_row = []
         for row_t in transposed_m_b:
@@ -55,6 +56,6 @@ def matrix_mul(m_a, m_b):
             for i in range(len(transposed_m_b[0])):
                 new_entry += (row[i] * row_t[i])
             result_row.append(new_entry)
-        result.append(result_row) 
+        result.append(result_row)
 
     return result
