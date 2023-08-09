@@ -3,6 +3,7 @@
 
 
 def lazy_matrix_mul(m_a, m_b):
+    """return dot product of m_a and m_b"""
     import numpy
     """returns the dot product of m_a and m_b"""
     if not (m_a and m_b):
