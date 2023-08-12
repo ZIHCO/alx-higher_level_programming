@@ -5,6 +5,16 @@ lazy_matrix_mul contains the definition, lazy_matrix_mul.
 >>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
 
 
+check for docstring:
+--------------------
+>>> m = __import__('101-lazy_matrix_mul').__doc__
+>>> len(m) > 1
+True
+
+>>> m = __import__('101-lazy_matrix_mul').lazy_matrix_mul.__doc__
+>>> len(m) > 1
+True
+
 check if list of lists:
 -----------------------
 >>> lazy_matrix_mul([[]], [[3,4,5]])
