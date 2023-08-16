@@ -9,14 +9,14 @@ def append_after(filename="", search_string="", new_string=""):
         write_list = []
         while string != "":
             make_list = string.split()
-            if "Holberton" in make_list:
+            """if "Holberton" in make_list:
                 idx = make_list.index("Holberton")
                 make_list.pop(idx)
                 make_list[-1] = make_list[-1] + "\n"
                 new_str = " ".join(make_list)
                 write_list.append(new_str)
                 string = f.readline()
-                continue
+                continue"""
             if search_string in string:
                 write_list.append(string)
                 write_list.append(new_string)
