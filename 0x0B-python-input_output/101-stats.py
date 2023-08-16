@@ -24,6 +24,6 @@ try:
         file_size += int(line_list[-1])
         line_dict[line_list[-2]] += 1
         i += 1
-    print_status_count()
+    """print_status_count()"""
 except KeyboardInterrupt:
     print_status_count()
