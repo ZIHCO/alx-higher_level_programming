@@ -2,6 +2,7 @@
 """This script reads from stdin"""
 from sys import stdin
 
+
 def print_status_count():
     print(f"File size: {line_dict['File size']}")
     list_code = list(sorted(line_dict))[:-1]
