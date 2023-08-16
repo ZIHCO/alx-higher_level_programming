@@ -20,7 +20,10 @@ for line in stdin:
         print_status_count()
         i = 0
     line_list = line.split()
-    file_size += int(line_list[-1])
+    try:
+        file_size += int(line_list[-1])
+    except Exception:
+        continue
     line_dict[line_list[-2]] += 1
     i += 1
 print_status_count()
