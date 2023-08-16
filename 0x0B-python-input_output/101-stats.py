@@ -26,5 +26,4 @@ try:
         i += 1
     print_status_count()
 except KeyboardInterrupt:
-    print_status_count()
     raise
