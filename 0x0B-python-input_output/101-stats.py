@@ -29,3 +29,4 @@ if __name__ == "__main__":
         for item in list_code:
             if line_dict[item] != 0:
                 print(f"{item}: {line_dict[item]}")
+        raise
