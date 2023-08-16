@@ -12,10 +12,9 @@ if __name__ == "__main__":
         for i in range(10):
             make_list = line.split()
             result_dict["File size"] += int(make_list[-1])
-            result_dict[str(make_list[-2])] += 1
+            result_dict[(make_list[-2])] += 1
             line = stdin.readline()
-        print(f"File size: {result_dict['File size']}")
-        code_list = list(sorted(result_dict))[0:-1]
+        code_list = list((result_dict))
         for item in code_list:
             if result_dict[item] > 0:
                 print(f"{item}: {result_dict[item]}")
