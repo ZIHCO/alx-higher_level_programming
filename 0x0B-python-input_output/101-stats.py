@@ -15,15 +15,12 @@ i = 0
 file_size = 0
 line_dict = {"200": 0, "301": 0, "400": 0, "401": 0,
              "403": 0, "404": 0, "405": 0, "500": 0}
-try:
-    for line in stdin:
-        if i % 10 == 0 and i != 0:
-            print_status_count()
-            i = 0
-        line_list = line.split()
-        file_size += int(line_list[-1])
-        line_dict[line_list[-2]] += 1
-        i += 1
-    print_status_count()
-except KeyboardInterrupt:
-    raise
+for line in stdin:
+    if i % 10 == 0 and i != 0:
+        print_status_count()
+        i = 0
+    line_list = line.split()
+    file_size += int(line_list[-1])
+    line_dict[line_list[-2]] += 1
+    i += 1
+print_status_count()
