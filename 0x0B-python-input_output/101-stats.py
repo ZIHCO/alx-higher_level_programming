@@ -1,7 +1,14 @@
 #!/usr/bin/python3
 """This script reads from stdin"""
-
 from sys import stdin
+
+def print_status_count():
+    print(f"File size: {line_dict['File size']}")
+    list_code = list(sorted(line_dict))[:-1]
+    for item in list_code:
+        if line_dict[item] != 0:
+            print(f"{int(item)}: {int(line_dict[item])}")
+
 
 i = 0
 line_dict = {"File size": 0, "200": 0, "301": 0, "400": 0, "401": 0,
@@ -9,11 +16,7 @@ line_dict = {"File size": 0, "200": 0, "301": 0, "400": 0, "401": 0,
 try:
     for line in stdin:
         if i % 10 == 0 and i != 0:
-            print(f"File size: {line_dict['File size']}")
-            list_code = list(sorted(line_dict))[:-1]
-            for item in list_code:
-                if line_dict[item] != 0:
-                    print(f"{item}: {line_dict[item]}")
+            print_status_count()
             i = 0
             continue
         line_list = line.split()
@@ -21,8 +24,4 @@ try:
         line_dict[line_list[-2]] += 1
         i += 1
 except KeyboardInterrupt:
-    print(f"File size: {line_dict['File size']}")
-    list_code = list(sorted(line_dict))[:-1]
-    for item in list_code:
-        if line_dict[item] != 0:
-            print(f"{item}: {line_dict[item]}")
+    print_status_count()
