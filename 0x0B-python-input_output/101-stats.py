@@ -20,7 +20,6 @@ try:
         if i % 10 == 0 and i != 0:
             print_status_count()
             i = 0
-            continue
         line_list = line.split()
         file_size += int(line_list[-1])
         line_dict[line_list[-2]] += 1
