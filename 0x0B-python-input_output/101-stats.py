@@ -27,3 +27,4 @@ try:
         i += 1
 except KeyboardInterrupt:
     print_status_count()
+    raise
