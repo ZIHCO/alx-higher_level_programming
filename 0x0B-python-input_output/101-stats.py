@@ -22,3 +22,10 @@ if __name__ == "__main__":
         line_dict[line_list[-2]] += 1
         line = stdin.readline()
         i += 1
+    else:
+        print(f"File size: {line_dict['File size']}")
+        list_code = list(sorted(line_dict))[:-1]
+        for item in list_code:
+            if line_dict[item] != 0:
+                print(f"{item}: {line_dict[item]}")
+        raise KeyboardInterrupt
