@@ -12,6 +12,7 @@ class TestRectangle(unittest.TestCase):
         self.r1 = Rectangle(2, 20)
         self.r2 = Rectangle(3, 10)
         self.r3 = Rectangle(12, 2, 0, 3, 23)
+        self.rectangle1 = Rectangle(2, 2)
 
     def tearDown(self):
         """tear down"""
@@ -41,3 +42,19 @@ class TestRectangle(unittest.TestCase):
     def test_display(self):
         """test for display"""
         self.assertEqual(Rectangle(1, 1).display(), None)
+
+    def test_str(self):
+        """test for __str__"""
+        string = "[Rectangle] (" + str(self.rectangle1.id) + ") 0/0 - 2/2"
+        self.assertEqual(self.rectangle1.__str__(), string)
+
+    def test_update(self):
+        """test for update"""
+        self.rectangle1.update(10, 10, 10, 1, 4)
+        self.assertEqual(self.rectangle1.id, 10)
+
+    def test_to_dictionary(self):
+        """test for to_dictionary"""
+        self.assertEqual(self.rectangle1.to_dictionary(),
+                         {'id': self.rectangle1.id, 'width': 2, 'height': 2,
+                          'x': 0, 'y': 0})
