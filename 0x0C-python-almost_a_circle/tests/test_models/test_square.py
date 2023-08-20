@@ -20,7 +20,7 @@ class TestSquare(unittest.TestCase):
             self.square2 = Square(10, 'd', 1, 4)
         with self.assertRaises(ValueError):
             self.square2 = Square(10, -10, 1, 4)
-    
+
     def test_area(self):
         """test for area"""
         self.assertEqual(self.square1.area(), 4)
