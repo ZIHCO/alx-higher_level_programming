@@ -43,3 +43,12 @@ class Base:
         filename = cls.__name__ + ".json"
         with open(filename, 'w', encoding="utf-8") as f:
             f.write(objs_json)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """deserialises the json obj and returns the python object"""
+        import json
+
+        if not json_string:
+            return []
+        return json.loads(json_string)
