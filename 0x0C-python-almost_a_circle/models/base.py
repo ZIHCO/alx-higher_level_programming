@@ -65,3 +65,20 @@ class Base:
         square = cls(1)
         square.update(**dictionary)
         return square
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+        import os
+
+        filename = cls.__name__ + ".json"
+        if not os.path.exists(filename):
+            return []
+        with open(filename, "r", encoding='utf-8') as f:
+            json_str = f.read()
+            list_dict = cls.from_json_string(json_str)
+        list_obj = []
+        for item in list_dict:
+            instance = cls.create(**item)
+            list_obj.append(instance)
+        return list_obj
