@@ -82,3 +82,47 @@ class Base:
             instance = cls.create(**item)
             list_obj.append(instance)
         return list_obj
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """parse list_objs to csv"""
+        import csv
+
+        """if not list_objs:
+            return None"""
+        if cls.__name__ == "Rectangle":
+            fields = ["id", "width", "height", "x", "y"]
+        elif cls.__name__ == "Square":
+            fields = ["id", "size", "x", "y"]
+        filename = cls.__name__ + ".csv"
+        with open(filename, 'w', newline='', encoding='utf-8') as f:
+            csvwriter = csv.writer(f)
+            csvwriter.writerow(fields)
+            list_dict = []
+            for item in list_objs:
+                cls_dict = item.to_dictionary()
+                instance_value = []
+                for key in fields:
+                    instance_value.append(cls_dict[key])
+                list_dict.append(instance_value)
+            csvwriter.writerows(list_dict)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """load a csv to list_obj"""
+        import csv
+
+        filename = cls.__name__ + ".csv"
+        list_objs = []
+        with open(filename, 'r', newline='', encoding='utf-8') as f:
+            csvreader = csv.reader(f)
+            fields = next(csvreader)
+            key_value = {}
+            for row in csvreader:
+                i = 0
+                for attr in fields:
+                    key_value[attr] = int(row[i])
+                    i += 1
+                python_obj = cls.create(**key_value)
+                list_objs.append(python_obj)
+        return list_objs
