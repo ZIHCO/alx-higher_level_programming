@@ -12,9 +12,9 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     with Session(engine) as session:
         try:
-            session.query(State).order_by(State.id)[0:1]
+            state = session.query(State).order_by(State.id).\
+                    filter_by(id=1).one()
         except Exception:
             print("Nothing")
         finally:
-            for state in session.query(State).order_by(State.id)[0:1]:
-                print("{}: {}".format(state.id, state.name))
+            print("{}: {}".format(state.id, state.name))
