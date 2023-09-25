@@ -11,8 +11,10 @@ if __name__ == "__main__":
     engine = create_engine(conn, pool_pre_ping=True)
     Base.metadata.create_all(engine)
     with Session(engine) as session:
-        if not session.query(State).order_by(State.id)[0:1]:
+        try:
+            session.query(State).order_by(State.id)[0:1]
+        except Exception:
             print("Nothing")
-        else:
+        finally:
             for state in session.query(State).order_by(State.id)[0:1]:
                 print("{}: {}".format(state.id, state.name))
