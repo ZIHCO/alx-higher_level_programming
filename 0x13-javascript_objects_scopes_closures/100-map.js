@@ -5,11 +5,7 @@
 
 const list = require('./100-data').list;
 
-const listIndex = [];
-
-for (let i = 0; i < list.length; i++) {
-  listIndex.push(list[i] * i);
-}
+const listIndex = list.map((x) => (x * list.indexOf(x)));
 
 console.log(list);
 console.log(listIndex);
