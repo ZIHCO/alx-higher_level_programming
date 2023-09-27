@@ -13,12 +13,13 @@ request(url, (error, response, body) => {
   }
   const dict = JSON.parse(body);
   const countMovies = dict.count;
-  const id = 18;
-  const wedgeAntiles = 'https://swapi-api.alx-tools.com/api/people/' + id + '/';
   let count = 0;
   for (let i = 0; i < countMovies; i++) {
-    if (dict.results[i].characters.indexOf(wedgeAntiles) !== -1) {
-      count += 1;
+    for (let j = 0; j < dict.results[i].characters.length; j++) {
+      const character = parseInt(dict.results[i].characters[j].split('/')[5]);
+      if (character === 18) {
+        count += 1;
+      }
     }
   }
   console.log(count);
