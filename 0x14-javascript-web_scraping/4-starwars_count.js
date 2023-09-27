@@ -16,8 +16,8 @@ request(url, (error, response, body) => {
   let count = 0;
   for (let i = 0; i < countMovies; i++) {
     for (let j = 0; j < dict.results[i].characters.length; j++) {
-      const character = parseInt(dict.results[i].characters[j].split('/')[5]);
-      if (character === 18) {
+      const character = dict.results[i].characters[j].split('/')[5];
+      if (character === '18') {
         count += 1;
       }
     }
