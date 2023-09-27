@@ -13,9 +13,8 @@ request(url, (error, response, body) => {
   }
   const dict = JSON.parse(body);
   const countMovies = dict.count;
-  const charId = 18;
-  const wedgeAntiles = 'https://swapi-api.alx-tools.com/api/people/' + charId + '/';
-  console.log(wedgeAntiles);
+  const id = 18;
+  const wedgeAntiles = 'https://swapi-api.alx-tools.com/api/people/' + id + '/';
   let count = 0;
   for (let i = 0; i < countMovies; i++) {
     if (dict.results[i].characters.indexOf(wedgeAntiles) !== -1) {
