@@ -5,12 +5,12 @@
 
 const request = require('request');
 const id = process.argv[2];
-const url = 'https://swapi-api.alx-tools.com/api/films/' + id + '/';
+const url = 'https://swapi-api.alx-tools.com/api/films/';
 request(url, (error, response, body) => {
   if (error) {
     console.log(error);
   }
-  const charactersList = JSON.parse(body).characters;
+  const charactersList = JSON.parse(body).results[id].characters;
   for (let i = 0; i < charactersList.length; i++) {
     const characterUrl = charactersList[i];
     request(characterUrl, (err, resp, bio) => {
