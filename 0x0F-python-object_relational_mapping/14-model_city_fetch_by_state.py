@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""print all city"""
+"""
+   print all city
+"""
 from model_state import Base, State
 from model_city import City
 from sqlalchemy import create_engine
