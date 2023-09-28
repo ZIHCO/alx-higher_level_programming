@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-   Write a Python file similar to model_state.py named model_city.py
-   that contains the class definition of a City.
+   print all the cities
 """
 from model_state import Base, State
 from model_city import City
