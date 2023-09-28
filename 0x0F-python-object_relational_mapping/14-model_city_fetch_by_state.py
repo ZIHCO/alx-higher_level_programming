@@ -15,4 +15,4 @@ with Session(engine) as session:
     rows = session.query(State, City).order_by(City.id).\
             filter(State.id == City.state_id).all()
     for state, city in rows:
-        print(state.name + ": " + str(city.id) + " " + city.name)
+        print(state.name + ": (" + str(city.id) + ") " + city.name)
