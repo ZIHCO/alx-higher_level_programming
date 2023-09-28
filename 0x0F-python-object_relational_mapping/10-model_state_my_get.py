@@ -15,6 +15,6 @@ if __name__ == "__main__":
         states = session.query(State).filter(State.name.in_([city])).all()
         if states:
             for state in states:
-                print("{}: {}".format(state.id, state.name))
+                print("{}".format(state.id))
         else:
             print("Not found")
