@@ -11,7 +11,6 @@ if __name__ == "__main__":
     engine = create_engine(conn, pool_pre_ping=True)
     Base.metadata.create_all(engine)
     with Session(engine) as session:
-        for state in session.query(State).order_by(State.id).all():
-            if "a" in state.name:
-                session.delete(state)
+        for state in session.query(State).filter(State.name.like('%a%')).all():
+            session.delete(state)
         session.commit()
