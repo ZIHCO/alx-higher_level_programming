@@ -13,5 +13,7 @@ if __name__ == "__main__":
 
     with Session(engine) as session:
         session.add(louisiana)
-        session.commit()
+        louisiana = session.query(State).\
+            filter(State.name.in_(["Louisiana"])).first()
         print(louisiana.id)
+        session.commit()
