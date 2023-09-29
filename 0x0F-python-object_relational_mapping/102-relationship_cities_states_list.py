@@ -11,6 +11,7 @@ if __name__ == "__main__":
     engine = create_engine(conn, pool_pre_ping=True)
     Base.metadata.create_all(engine)
     with Session(engine) as session:
-        cities = session.query(City, State).filter(State.id == City.state_id).all()
+        cities = session.query(City, State).filter(State.id == City.state_id).\
+                all()
         for city, state in cities:
             print(str(city.id) + ": " + city.name + " -> " + state.name)
