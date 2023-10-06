@@ -5,11 +5,12 @@
 from sys import argv
 import requests
 
-url = 'https://api.github.com/' + 'repos/' + argv[2] + '/' + argv[1]
-response = requests.get(url).json()
-commit_url = response['commits_url'][:-6]
+if __name__ == "__main__":
+    url = 'https://api.github.com/' + 'repos/' + argv[2] + '/' + argv[1]
+    response = requests.get(url).json()
+    commit_url = response['commits_url'][:-6]
 
-commits_response = requests.get(commit_url).json()
-for i in range(10):
-    print(f"{commits_response[i]['sha']}: "
-          f"{commits_response[i]['author']['login']}")
+    commits_response = requests.get(commit_url).json()
+    for i in range(10):
+        print(f"{commits_response[i]['sha']}: "
+              f"{commits_response[i]['author']['login']}")
