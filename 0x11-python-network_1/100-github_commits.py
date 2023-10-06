@@ -12,5 +12,8 @@ if __name__ == "__main__":
 
     commits_response = requests.get(commit_url).json()
     for i in range(10):
-        print(f"{commits_response[i]['sha']}: "
-              f"{commits_response[i]['commit']['author']['name']}")
+        try:
+            print(f"{commits_response[i]['sha']}: "
+                  f"{commits_response[i]['commit']['author']['name']}")
+        except Exception:
+            pass
